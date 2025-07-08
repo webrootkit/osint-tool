@@ -123,7 +123,7 @@ def main():
 
                by webrrotkit
 """
-    print(f"{Colors.BOLD}{Colors.FAIL}{banner}{Colors.ENDC}")
+    print(Colors.BOLD + Colors.FAIL + banner + Colors.ENDC)
 
     while True:
         print(f"{Colors.HEADER}OSINT Tool - Menu{Colors.ENDC}")

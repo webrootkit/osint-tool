@@ -11,7 +11,7 @@ Python-скрипт для поиска информации по email/username
 - Поиск по тг айди ( В разработке )
 ## ⚡ Быстрый старт
 ```bash
-git clone https://github.com/ваш-ник/osint-tool.git
+git clone https://github.com/webrootkit/osint-tool.git
 cd osint-tool
 pip install -r requirements.txt
 python osint.py --email example@mail.com

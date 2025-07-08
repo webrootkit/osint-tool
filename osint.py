@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-import argparse
 import requests
-import json
-from datetime import datetime
-import sys
 import os
 import sqlite3
 from bs4 import BeautifulSoup
@@ -123,7 +119,7 @@ def check_username(username):
 # ----------------- MAIN -------------------
 def main():
     init_db()
-    banner = f"""
+    banner = fr"""
 {Colors.BOLD}{Colors.FAIL}
  __        __   _     ____                  _ _ _ 
  \ \      / /__| |__ |  _ \ __ _ _ __   ___| | | |
@@ -136,7 +132,7 @@ def main():
 """
     print(banner)
     while True:
-        print(f"{Colors.HEADER}\nOSINT Tool - Menu{Colors.ENDC}")
+        print(f"{Colors.HEADER}OSINT Tool - Menu{Colors.ENDC}")
         print("1. Пробив по Email")
         print("2. Пробив по Username")
         print("3. Пробив по Telegram ID (в разработке)")
@@ -164,8 +160,7 @@ def main():
         else:
             print("Неверный выбор.")
 
-        input(f"\n{Colors.BOLD}Нажмите Enter, чтобы продолжить...{Colors.ENDC}\n")
+        input(f"\n{Colors.BOLD}Нажмите Enter, чтобы начать заново...{Colors.ENDC}\n")
 
 if __name__ == '__main__':
     main()
-

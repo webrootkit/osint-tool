@@ -114,16 +114,13 @@ def check_username(username):
 
 def main():
     init_db()
-    banner = """
- __        __   _     ____                  _ _ _ 
- \\ \\      / /__| |__ |  _ \\ __ _ _ __   ___| | | |
-  \\ \\ /\\ / / _ \\ '_ \\| |_) / _` | '_ \\ / _ \\ | | |
-   \\ V  V /  __/ |_) |  __/ (_| | | | |  __/ |_|_|
-    \\_/\\_/ \\___|_.__/|_|   \\__,_|_| |_|\\___|_(_|_)
-
-               by webrrotkit
-"""
-    print(Colors.BOLD + Colors.FAIL + banner + Colors.ENDC)
+    banner = (
+        Colors.BOLD + Colors.FAIL +
+        "\n=== OSINT TOOL ===\n"
+        "      by webrootkit\n" +
+        Colors.ENDC
+    )
+    print(banner)
 
     while True:
         print(f"{Colors.HEADER}OSINT Tool - Menu{Colors.ENDC}")

@@ -119,8 +119,7 @@ def check_username(username):
 # ----------------- MAIN -------------------
 def main():
     init_db()
-    banner = fr"""
-{Colors.BOLD}{Colors.FAIL}
+    banner = """
  __        __   _     ____                  _ _ _ 
  \ \      / /__| |__ |  _ \ __ _ _ __   ___| | | |
   \ \ /\ / / _ \ '_ \| |_) / _` | '_ \ / _ \ | | |
@@ -128,9 +127,9 @@ def main():
     \_/\_/ \___|_.__/|_|   \__,_|_| |_|\___|_(_|_)
 
                by webrrotkit
-{Colors.ENDC}
 """
-    print(banner)
+    print(f"{Colors.BOLD}{Colors.FAIL}{banner}{Colors.ENDC}")
+
     while True:
         print(f"{Colors.HEADER}OSINT Tool - Menu{Colors.ENDC}")
         print("1. Пробив по Email")

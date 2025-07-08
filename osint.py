@@ -21,7 +21,6 @@ class Colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# ----------------- DATABASE -------------------
 def init_db():
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
@@ -41,7 +40,6 @@ def save_report(target, result):
     conn.commit()
     conn.close()
 
-# ----------------- CHECK FUNCTIONS -------------------
 def check_haveibeenpwned(email):
     url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
     headers = {"hibp-api-key": API_KEYS['hibp']} if API_KEYS['hibp'] else {}
@@ -65,7 +63,6 @@ def check_haveibeenpwned(email):
         print(f"{Colors.WARNING}\n[?] HIBP error: {str(e)}{Colors.ENDC}")
         result.append(str(e))
     save_report(email, '\n'.join(result))
-
 
 def check_hunterio(email):
     if not API_KEYS['hunterio']:
@@ -94,7 +91,6 @@ def check_hunterio(email):
         result.append(str(e))
     save_report(email, '\n'.join(result))
 
-
 def check_username(username):
     sites = {
         'GitHub': f'https://github.com/{username}',
@@ -116,15 +112,14 @@ def check_username(username):
             result.append(f"Error checking {site}")
     save_report(username, '\n'.join(result))
 
-# ----------------- MAIN -------------------
 def main():
     init_db()
     banner = """
  __        __   _     ____                  _ _ _ 
- \ \      / /__| |__ |  _ \ __ _ _ __   ___| | | |
-  \ \ /\ / / _ \ '_ \| |_) / _` | '_ \ / _ \ | | |
-   \ V  V /  __/ |_) |  __/ (_| | | | |  __/ |_|_|
-    \_/\_/ \___|_.__/|_|   \__,_|_| |_|\___|_(_|_)
+ \\ \\      / /__| |__ |  _ \\ __ _ _ __   ___| | | |
+  \\ \\ /\\ / / _ \\ '_ \\| |_) / _` | '_ \\ / _ \\ | | |
+   \\ V  V /  __/ |_) |  __/ (_| | | | |  __/ |_|_|
+    \\_/\\_/ \\___|_.__/|_|   \\__,_|_| |_|\\___|_(_|_)
 
                by webrrotkit
 """

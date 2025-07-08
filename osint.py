@@ -131,21 +131,19 @@ def main():
    \ V  V /  __/ |_) |  __/ (_| | | | |  __/ |_|_|
     \_/\_/ \___|_.__/|_|   \__,_|_| |_|\___|_(_|_)
 
-               by webrootkit
-{Colors.ENDC}"""
+               by webrrotkit
+{Colors.ENDC}
+"""
     print(banner)
-    init_db()
     while True:
-        print(f"{Colors.HEADER}
-OSINT Tool - Menu{Colors.ENDC}")
+        print(f"{Colors.HEADER}\nOSINT Tool - Menu{Colors.ENDC}")
         print("1. Пробив по Email")
         print("2. Пробив по Username")
         print("3. Пробив по Telegram ID (в разработке)")
         print("4. Пробив по номеру телефона (в разработке)")
         print("5. Выход")
 
-        choice = input("
-Выберите действие (1-5): ")
+        choice = input("\nВыберите действие (1-5): ")
 
         if choice == '1':
             email = input("Введите email: ")
@@ -166,9 +164,8 @@ OSINT Tool - Menu{Colors.ENDC}")
         else:
             print("Неверный выбор.")
 
-        input(f"
-{Colors.BOLD}Нажмите Enter, чтобы продолжить...{Colors.ENDC}
-")
+        input(f"\n{Colors.BOLD}Нажмите Enter, чтобы продолжить...{Colors.ENDC}\n")
 
 if __name__ == '__main__':
-    main() 
+    main()
+

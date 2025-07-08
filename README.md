@@ -7,7 +7,8 @@ Python-скрипт для поиска информации по email/username
 - Проверка email в **Have I Been Pwned**
 - Поиск в **Hunter.io** (требуется API-ключ)
 - Поиск username в соцсетях (GitHub, Twitter, VK и др.)
-
+- Поиск по номеру телефона ( В разработке ) 
+- Поиск по тг айди ( В разработке )
 ## ⚡ Быстрый старт
 ```bash
 git clone https://github.com/ваш-ник/osint-tool.git

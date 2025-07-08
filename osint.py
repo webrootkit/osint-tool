@@ -123,33 +123,52 @@ def check_username(username):
 # ----------------- MAIN -------------------
 def main():
     init_db()
-    print(f"{Colors.HEADER}\nOSINT Tool - Menu{Colors.ENDC}")
-    print("1. Пробив по Email")
-    print("2. Пробив по Username")
-    print("3. Пробив по Telegram ID (в разработке)")
-    print("4. Пробив по номеру телефона (в разработке)")
-    print("5. Выход")
+    banner = f"""
+{Colors.BOLD}{Colors.FAIL}
+ __        __   _     ____                  _ _ _ 
+ \ \      / /__| |__ |  _ \ __ _ _ __   ___| | | |
+  \ \ /\ / / _ \ '_ \| |_) / _` | '_ \ / _ \ | | |
+   \ V  V /  __/ |_) |  __/ (_| | | | |  __/ |_|_|
+    \_/\_/ \___|_.__/|_|   \__,_|_| |_|\___|_(_|_)
 
-    choice = input("\nВыберите действие (1-5): ")
+               by webrootkit
+{Colors.ENDC}"""
+    print(banner)
+    init_db()
+    while True:
+        print(f"{Colors.HEADER}
+OSINT Tool - Menu{Colors.ENDC}")
+        print("1. Пробив по Email")
+        print("2. Пробив по Username")
+        print("3. Пробив по Telegram ID (в разработке)")
+        print("4. Пробив по номеру телефона (в разработке)")
+        print("5. Выход")
 
-    if choice == '1':
-        email = input("Введите email: ")
-        check_haveibeenpwned(email)
-        check_hunterio(email)
-        username_guess = email.split('@')[0]
-        check_username(username_guess)
-    elif choice == '2':
-        username = input("Введите username: ")
-        check_username(username)
-    elif choice == '3':
-        print("[!] Пробив по Telegram ID будет добавлен позже.")
-    elif choice == '4':
-        print("[!] Пробив по номеру телефона будет добавлен позже.")
-    elif choice == '5':
-        print("Выход...")
-        sys.exit()
-    else:
-        print("Неверный выбор.")
+        choice = input("
+Выберите действие (1-5): ")
+
+        if choice == '1':
+            email = input("Введите email: ")
+            check_haveibeenpwned(email)
+            check_hunterio(email)
+            username_guess = email.split('@')[0]
+            check_username(username_guess)
+        elif choice == '2':
+            username = input("Введите username: ")
+            check_username(username)
+        elif choice == '3':
+            print("[!] Пробив по Telegram ID будет добавлен позже.")
+        elif choice == '4':
+            print("[!] Пробив по номеру телефона будет добавлен позже.")
+        elif choice == '5':
+            print("Выход...")
+            break
+        else:
+            print("Неверный выбор.")
+
+        input(f"
+{Colors.BOLD}Нажмите Enter, чтобы продолжить...{Colors.ENDC}
+")
 
 if __name__ == '__main__':
-    main()
+    main() 
